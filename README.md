@@ -31,18 +31,15 @@ Insurers that price every member the same overcharge healthy customers and under
 ### 1. Smoking is the #1 cost driver
 Smokers are 19.8% of members but 47.8% of claim dollars. Smoking has a 0.77 correlation with claim amount, versus 0.30 for age and 0.20 for BMI.
 
-<p align="center"><img src="images/share.png" width="650" alt="Share of members vs share of claims by smoking status"></p>
+
 
 ### 2. BMI raises risk, and smoking multiplies it
 Obese smokers average **$41.1K**, 5.4x the claims of normal-weight non-smokers ($7.6K).
 
-<p align="center"><img src="images/bmi_smoker.png" width="650" alt="Average claim by BMI category and smoking status"></p>
+
 
 ### 3. Age and diabetes: real effects, mostly through smoking
-<p align="center">
-  <img src="images/age.png" width="320" alt="Age by smoking">
-  <img src="images/diab.png" width="320" alt="Diabetes by smoking">
-</p>
+
 
 | Signal | Result |
 |---|---|
@@ -56,16 +53,13 @@ Obese smokers average **$41.1K**, 5.4x the claims of normal-weight non-smokers (
 ### 4. Claim costs are highly concentrated
 The costliest 5% of members generate 17.4% of claim dollars, the top 10% generate **31.8%** and the top 20% generate 51.6%.
 
-<p align="center">
-  <img src="images/conc.png" width="320" alt="Cost concentration curve">
-  <img src="images/corr.png" width="320" alt="Correlation with claim amount">
-</p>
+
 
 ## 🧩 Risk Tiers
 
 Two columns (smoking status and BMI) are enough to build practical tiers with one Pandas `np.select` rule:
 
-<p align="center"><img src="images/tiers.png" width="380" alt="Risk tiers: share of members vs claims"></p>
+
 
 | Tier | Rule | Members | Claim $ | Avg claim |
 |---|---|---|---|---|
@@ -91,7 +85,6 @@ df["risk_tier"] = np.select(conditions,
 | Feature engineering | `pd.cut` age bands, WHO BMI categories, smoking and diabetes labels, `np.select` risk tiers |
 | Quality flags | 756 records with blood pressure 0 (excluded from segmentation); 1,096 exact duplicate rows flagged but kept, as results are unchanged without them |
 
-<p align="center"><img src="images/dist.png" width="620" alt="Claim distribution split by smoking status"></p>
 
 ## 🛠️ Analyst Toolkit Demonstrated
 
