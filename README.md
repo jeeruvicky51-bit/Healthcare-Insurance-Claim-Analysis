@@ -3,7 +3,8 @@ Healthcare insurance claim analysis using Python (Pandas, NumPy), exploratory da
 
 
 
-![Healthcare Insurance Claim Analysis Power BI Dashboard](images/dashboard.png)
+![Healthcare Insurance Claim Analysis Power BI Dashboard](Snapshot_of_Health_Insurance_Claim_Analysis.png)
+
 
 
 
